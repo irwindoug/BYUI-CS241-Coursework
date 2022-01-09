@@ -1,3 +1,10 @@
+'''
+Program: Check02b.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: Checks for lines and words
+'''
+
 def main ():
     # Set up initial values
     numwords = 0
