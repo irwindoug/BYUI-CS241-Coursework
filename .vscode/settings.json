@@ -1,0 +1,9 @@
+{
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/customeModule"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/customeModule"
+    ],
+    "python.analysis.useImportHeuristic": true
+}
