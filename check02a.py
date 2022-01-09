@@ -1,8 +1,8 @@
 '''
-check02a
-Brother Mellow, CS 241
-
-Doug Irwin
+Program: Check02a.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: Adds three numbers together
 '''
 
 def main():
