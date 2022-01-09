@@ -1,3 +1,10 @@
+'''
+Program: myAssign01.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: Higher or Lower numbers guessing game.
+'''
+
 import random
 from random import randint
 
