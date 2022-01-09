@@ -1,3 +1,2 @@
 *.tar
 **/__pycache__/
-sftp.json
