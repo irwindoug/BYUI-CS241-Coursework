@@ -1,3 +1,10 @@
+'''
+Program: myAssign02.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: Articulates and performs Big-O analyses.
+'''
+
 def main():
     file = get_file()
     print()
