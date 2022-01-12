@@ -13,7 +13,6 @@ jobs:
       with:
         server: ${{ secrets.school_server }}
         port: ${{ secrets.school_port }}
-        protocol: ${{ secrets.school_protocol }}
         username: ${{ secrets.school_username }}
         password: ${{ secrets.school_password }}
         server-dir: ${{ secrets.school_dir }}
