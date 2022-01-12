@@ -1,22 +1,24 @@
-on: push
 name: 🚀 Deploy to school on push
+on: 
+  push:
+    branches:
+      - main
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy-main:
+    name: 🎉 Deploy to school
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      uses: milanmk/actions-file-deployer@master
       with:
-        server: ${{ secrets.school_server }}
-        port: ${{ secrets.school_port }}
-        username: ${{ secrets.school_username }}
-        password: ${{ secrets.school_password }}
-        server-dir: ${{ secrets.school_dir }}
-        exclude: |
-          **/.git*
-          **/.git*/**
-          README.md
+        remote-host: ${{ secrets.school_server }}
+        remote-port: ${{ secrets.school_port }}
+        remote-protocol: ${{ secrets.school_protocol }}
+        remote-user: ${{ secrets.school_username }}
+        remote-password: ${{ secrets.school_password }}
+        remote-path: ${{ secrets.school_dir }}
