@@ -1,0 +1,28 @@
+Your Name: Doug Irwin
+
+1. Describe two benefits of using functions.
+The first benefit of using functions is reusability. Rather than typing out the same thing over and over again, it is easier to write it out once, then reference it every time you would need it. 
+The second benefit of using functions is maintainability. If there is a bug or typo in a part of the code, it is easier to fix it in one spot than trying to hunt down every instance of that logic.
+
+2. If you were getting paid to write this week's "prove" assignment, and could spend another 100 hours on it, what would you do differently?
+First, I would really like to find a way to simplify the calc_numbers function that I have. Even though it has all the functionality it needs, I would really like to make it smaller if I could, without using the "if" switch logic that I have.
+
+3. What is the most interesting thing you learned as a part of your work for this class this week?
+I love learning about the enumerate function! This is a much more elegant solution to a standard for loop and makes it easier to maintain.
+
+4. Describe one specific way that you helped someone else this week, or reached out for help.
+This week, I wasn't as good at reaching out to help other students as I had to help my wife recover after she had surgery on Tuesday. I did hop on Slack every day to make sure I was able to help, but most students that asked for help already received help.
+
+5. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
+The only topic that I feel uneasy about this week was understanding the Big-O annotation. I'm hoping that I will be able to understand it better going forward but right now, it's just a little difficult to know how apply it.
+
+6. How much time did you spend this week on each of the following:
+
+Reading - 1 1/2 hours
+Checkpoint A - 15 minutes
+Checkpoint B - 20 minutes
+Team Activity - 30 minutes
+Data Structures Homework - 1 hour
+Prove Assignment - 1 hour
+
+If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
