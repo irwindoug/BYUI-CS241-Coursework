@@ -5,5 +5,8 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}/customeModule"
     ],
-    "python.analysis.useImportHeuristic": true
+    "python.analysis.useImportHeuristic": true,
+    "cSpell.words": [
+        "Mellor" // Professor's last name
+    ]
 }
