@@ -1,10 +1,9 @@
-"""
-File: check03b.py
-
-Purpose: Practice classes with Complex numbers.
-"""
-
-
+'''
+Program: Check03a.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Purpose: Practice classes with Complex numbersCreate a basic class in Python
+'''
 
 # TODO: Create your Complex class here!
 
