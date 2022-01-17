@@ -1,3 +1,10 @@
+'''
+Program: Check03a.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: Create a basic class in Python
+'''
+
 class Student():
     def __init__(self):
         self.first_name = ""
