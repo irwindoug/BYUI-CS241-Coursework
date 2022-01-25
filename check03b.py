@@ -2,7 +2,7 @@
 Program: Check03a.py
 Brother Mellor, CS 241
 Author: Doug Irwin
-Purpose: Practice classes with Complex numbersCreate a basic class in Python
+Purpose: Practice classes with Complex numbers
 '''
 
 # TODO: Create your Complex class here!
