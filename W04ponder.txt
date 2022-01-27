@@ -17,8 +17,8 @@ N/A
 Reading - 2 hours
 Checkpoint A - 25 minutes
 Checkpoint B - 45 minutes
-Team Activity - 0 (missed due to being sick) 
-Data Structures Homework - 
+Team Activity - 2 hours 
+Data Structures Homework - 45 minutes
 Prove Assignment - 2 1/2 hours
 
 If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
