@@ -1,3 +1,10 @@
+'''
+Program: Check04a.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Purpose: Write programs that correctly use object composition to solve problems
+'''
+
 class Person():
   def __init__(self):
     self.name = "anonymous"
