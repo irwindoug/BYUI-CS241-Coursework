@@ -1,3 +1,10 @@
+'''
+Assignment: Week 4 - Order Class
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: This class is for an order with an order ID and list of products.
+'''
+
 class Order:
     def __init__(self):
         self.id=""

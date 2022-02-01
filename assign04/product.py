@@ -1,5 +1,11 @@
-class Product:
+'''
+Assignment: Week 4 - Product Class
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: This class is for a product with an item ID, name, price, and quantity left of the product.
+'''
 
+class Product:
 
     def __init__(self, id, name, price, quantity):
         self.id = id

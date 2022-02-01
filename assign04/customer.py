@@ -1,3 +1,9 @@
+'''
+Assignment: Week 4 - Order Class
+Brother Mellor, CS 241
+Author: Doug Irwin
+Summary: This class is for a customer with a customer ID, name, and list of orders.
+'''
 class Customer:
     def __init__(self):
         self.id = ""
