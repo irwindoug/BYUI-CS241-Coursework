@@ -1,6 +1,3 @@
-from hashlib import new
-
-
 class Point():
     def __init__(self):
         self.x = 0
