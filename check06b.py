@@ -1,3 +1,10 @@
+'''
+Program: Check06b.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Purpose: Write programs that correctly use inheritance to solve problems.
+'''
+
 class Phone():
     def __init__(self):
         self.area_code = 0
