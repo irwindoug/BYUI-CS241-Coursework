@@ -1,3 +1,9 @@
+'''
+Assignment: Week 5 - Paddle Class
+Brother Mellor, CS 241
+Author: Doug Irwin
+'''
+
 import arcade
 from point import Point
 

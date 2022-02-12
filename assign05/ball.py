@@ -1,3 +1,9 @@
+'''
+Assignment: Week 5 - Ball Class
+Brother Mellor, CS 241
+Author: Doug Irwin
+'''
+
 import arcade
 import random
 import math
