@@ -1,3 +1,10 @@
+'''
+Program: Check06a.py
+Brother Mellor, CS 241
+Author: Doug Irwin
+Purpose: Write programs that correctly use inheritance to solve problems.
+'''
+
 class Book():
     def __init__(self):
         self.title = ""
