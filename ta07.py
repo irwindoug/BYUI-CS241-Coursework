@@ -43,13 +43,15 @@ def main():
 
     # Add employees to list
     while employee_type != 'q':
-        if employee_type == 'h':
+        print()
+
+        if employee_type == 'h': # Create an hourly employee
             name = input("Enter employee name: ")
             hours = int(input("Enter employee hours: "))
             wage = int(input("Enter employee hourly wage: "))
             employees.append(HourlyEmployee(name, wage, hours))
 
-        elif employee_type == 's':
+        elif employee_type == 's': # Create a salary employee
             name = input("Enter employee name: ")
             wage = int(input("Enter employee yearly salary: "))
             employees.append(SalaryEmployee(name, wage))
@@ -59,6 +61,7 @@ def main():
         print()
 
         employee_type = input(main_prompt).lower()
+
 
     # Loop through list of employees and display them
     for employee in employees:
