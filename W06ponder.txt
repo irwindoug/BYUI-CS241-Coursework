@@ -1,0 +1,27 @@
+our Name:
+
+1. Give a specific example of a time when you might want to override a method from a base class.
+When the class has different, specific logic that cannot be iterated out in a base class.
+
+2. Do you think IS-A or HAS-A is a better choice for the team activity (Circles and Points)? Why?
+I think the HAS-A is a better choice as it provides a template for consistency.
+
+3. What is the most interesting thing you learned as a part of your work for this class this week?
+I learned how to declare and initialize a variable type without having to provide a default value.
+
+4. Describe one specific way that you helped someone else this week, or reached out for help.
+This week, I was not able to reach out to my team as I was dealing with a family emergency, but I was able to send a copy of my team activity code to them to review.
+
+5. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
+
+
+6. How much time did you spend this week on each of the following:
+
+Reading - 45 minutes
+Checkpoint A - 15 minutes
+Checkpoint B - 15 minutes
+Team Activity - 25 minutes
+Data Structures Homework - 1 1/2 hours
+Prove Assignment - 1 hour
+
+If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
