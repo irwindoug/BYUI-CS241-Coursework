@@ -1,4 +1,4 @@
-our Name:
+Your Name: Doug Irwin
 
 1. Give a specific example of a time when you might want to override a method from a base class.
 When the class has different, specific logic that cannot be iterated out in a base class.
