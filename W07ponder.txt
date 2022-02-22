@@ -1,27 +1,28 @@
 Your Name: Doug Irwin
 
 1. Take a minute to search the Internet for an explanation of "polymorphism". You might especially consider sources such as StackOverflow and Wikipedia. After reading through some of these, in your own words, describe polymorphism AND why it's useful.
-
+It basically is taking something that has a base level and being able to shape it into multiple different functionalities. It helps guide a developer, or multiples, in being able to create different types of objects, but still be able to know what functionality is utilized within the code.
 
 2. What is the benefit of making an empty abstract method in a base class?
-
+To avoid confusing it as one that has basic functionality. It causes the developer not to rely on the main template.
 
 3. What is the most interesting thing you learned as a part of your work for this class this week?
-
+I REALLY enjoyed learning about polymorphism, utilizing it ot make
 
 4. Describe one specific way that you helped someone else this week, or reached out for help.
-
+I helped out both Jer and Satchel, each with their own code through Slack this week
 
 5. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
 
 
 6. How much time did you spend this week on each of the following:
 
-Reading - 
-Checkpoint A - 
-Checkpoint B - 
-Team Activity - 
-Data Structures Homework - 
-Prove Assignment - 
+Reading - 50 minutes
+Checkpoint A - 25 minutes
+Checkpoint B - 15 minutes
+Team Activity - 1 hour
+Data Structures Homework - 1 1/4 hours
+Prove Assignment - 2 1/2 hours
+(I kept over-complicating my game by trying to use less code)
 
 If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
