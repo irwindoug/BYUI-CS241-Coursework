@@ -1,54 +1,52 @@
 class GPA():
     def __init__(self):
-        self.value = 0
+        self.gpa:float = 0
 
     def get_gpa(self):
-        return self.value
+        return self.gpa
 
-    def set_gpa(self, value):
-        if (value > 4):
-            self.value = 4.0
-        elif(value < 0):
-            self.value = 0.0
+    def set_gpa(self, gpa):
+        if(gpa < 0):
+            self.gpa = 0.0
         else:
-            self.value = value
+            self.gpa = gpa
 
     def get_letter(self):
-        if (self.value <=.99):
+        if (self.gpa <=.99):
             return "F"
-        elif (self.value >=1.0 and self.value <=1.99):
+        elif (self.gpa >=1.0 and self.gpa <=1.99):
             return "D"
-        elif (self.value >= 2.0 and self.value <= 2.99):
+        elif (self.gpa >= 2.0 and self.gpa <= 2.99):
             return "C"
-        elif (self.value >= 3.0 and self.value <= 3.99):
+        elif (self.gpa >= 3.0 and self.gpa <= 3.99):
             return "B"
-        elif(self.value == 4.0):
+        elif(self.gpa == 4.0):
             return "A"
 
     def set_letter(self, letter):
         if (letter == "A"):
-            self.value = 4.0
+            self.gpa = 4.0
         elif(letter == "B"):
-            self.value = 3.0
+            self.gpa = 3.0
         elif(letter == "C"):
-            self.value = 2.0
+            self.gpa = 2.0
         elif(letter == "D"):
-            self.value = 1.0
+            self.gpa = 1.0
         else:
-            self.value = 0
+            self.gpa = 0
 
 def main():
     student = GPA()
 
-    print("Initial values:")
+    print("Initial GPAs:")
     print("GPA: {:.2f}".format(student.get_gpa()))
     print("Letter: {}".format(student.get_letter()))
 
-    value = float(input("Enter a new GPA: "))
+    gpa = float(input("Enter a new GPA: "))
 
-    student.set_gpa(value)
+    student.set_gpa(gpa)
 
-    print("After setting value:")
+    print("After setting gpa:")
     print("GPA: {:.2f}".format(student.get_gpa()))
     print("Letter: {}".format(student.get_letter()))
 
