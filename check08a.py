@@ -38,7 +38,7 @@ class GPA():
 def main():
     student = GPA()
 
-    print("Initial GPAs:")
+    print("Initial values:")
     print("GPA: {:.2f}".format(student.get_gpa()))
     print("Letter: {}".format(student.get_letter()))
 
@@ -46,7 +46,7 @@ def main():
 
     student.set_gpa(gpa)
 
-    print("After setting gpa:")
+    print("After setting value:")
     print("GPA: {:.2f}".format(student.get_gpa()))
     print("Letter: {}".format(student.get_letter()))
 
