@@ -50,8 +50,6 @@ def main():
     time.minutes = int(input("Minutes: "))
     time.seconds = int(input("Seconds: "))
 
-    # print(("Hours: %i | Minutes: %i | Seconds: %i") % (time.hours_simple, time.minutes, time.seconds))
-
     print(("%i:%02i:%02i %s") % (time.hours_simple, time.minutes, time.seconds, time.period))
 
 if __name__ == "__main__":
