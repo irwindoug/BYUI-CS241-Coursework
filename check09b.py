@@ -23,7 +23,6 @@ def main():
             print("Error: Cannot divide by zero")
         except NegativeNumberError:
             print("Error: The value cannot be negative")
-    
 
 if __name__== "__main__":
     main()
