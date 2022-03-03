@@ -10,6 +10,5 @@ def main():
 
     print("The result is: %d" % (n * 2))
 
-
 if __name__ == "__main__":
     main()
