@@ -1,0 +1,68 @@
+@startuml Asteroids Game
+
+abstract class FlyingObject {
+    -center: Point
+    -velocity: Velocity
+    -texture: Texture
+    -direction:float
+    -speed: float
+    -radius: float
+    -angle:float
+    -alive: bool
+    __init__(img:str, radius:float, speed:float=0, angle:float=1) -> None
+    +draw() -> None
+    +advance() -> None
+    +is_alive() -> bool
+}
+
+class Ship {
+    __init__(screen_width, screen_height) -> None
+    +left() -> None
+    +right() -> None
+    +thrust() -> None
+}
+
+class Bullet {
+    __init__() -> None
+    +fire(angle) -> None
+}
+
+abstract class Rock {
+    __init__(img, radius, speed=1, angle=1) -> None
+}
+
+class SmallRock {
+    __init__() -> None
+}
+
+class MediumRock {
+    __init__() -> None
+}
+
+class LargeRock {
+    __init__() -> None
+}
+
+class Velocity {
+    +dx: int
+    +dy: int
+}
+
+class Point {
+    +x: int
+    +y: int
+}
+skinparam groupInheritance 3
+
+Velocity <-- FlyingObject
+Point <-- FlyingObject
+
+FlyingObject <|-right- Rock
+FlyingObject <|-- Ship
+FlyingObject <|-- Bullet
+
+Rock <|-- SmallRock
+Rock <|-- MediumRock
+Rock <|-- LargeRock
+
+@enduml
