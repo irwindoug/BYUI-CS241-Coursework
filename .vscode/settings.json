@@ -5,7 +5,6 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}/customeModule"
     ],
-    "python.analysis.useImportHeuristic": true,
     "python.testing.pytestArgs": [
         "./tests"
     ],
