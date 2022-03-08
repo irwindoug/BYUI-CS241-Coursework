@@ -4,7 +4,6 @@ Original Author: Br. Burton, designed to be completed by others.
 Sorts a list of numbers.
 """
 
-
 def sort(numbers):
     """
     Fill in this method to sort the list of numbers
