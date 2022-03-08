@@ -1,3 +1,6 @@
+
+import math
+
 # Global Variables
 SHIP_TURN_AMOUNT = 3
 SHIP_THRUST_AMOUNT = 0.25
@@ -13,12 +16,18 @@ class Ship(FlyingObject):
         self.center.x = screen_width/2
         self.center.y = screen_height/2
 
-
+    @property
     def left(self) -> None:
-        pass
+        self.angle += SHIP_TURN_AMOUNT
 
+    @property
     def right(self) -> None:
-        pass
+        self.angle -= SHIP_TURN_AMOUNT
 
-    def thrust(self) -> None:
-        pass
+    def thrust(self, isUp) -> None:
+        if (not isUp):
+            self.velocity.dx += math.sin(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
+            self.velocity.dy -= math.cos(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
+        else:
+            self.velocity.dx -= math.sin(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
+            self.velocity.dy += math.cos(math.radians(self.angle)) * SHIP_THRUST_AMOUNT

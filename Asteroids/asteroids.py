@@ -6,6 +6,7 @@ This program implements the asteroids game.
 """
 # Global Imports
 import arcade
+from bullet import Bullet
 
 # Local Imports
 from ship import Ship
@@ -40,6 +41,8 @@ class Game(arcade.Window):
         self.ship = Ship(SCREEN_WIDTH, SCREEN_HEIGHT)
 
         self.asteroids = []
+        self.bullets = []
+
         for i in range(INITIAL_ROCK_COUNT):
             self.asteroids.append(LargeRock())
 
@@ -53,10 +56,13 @@ class Game(arcade.Window):
         arcade.start_render()
 
         # TODO: draw each object
-        # self.ship.draw()
+        for bullet in self.bullets:
+            bullet.draw()
 
         for asteroid in self.asteroids:
             asteroid.draw()
+
+        self.ship.draw()
 
     def update(self, delta_time):
         """
@@ -67,7 +73,13 @@ class Game(arcade.Window):
 
         # TODO: Tell everything to advance or move forward one step in time
         for asteroid in self.asteroids:
-            asteroid.advance()
+            asteroid.advance(SCREEN_WIDTH,SCREEN_WIDTH)
+
+        for bullet in self.bullets:
+            bullet.advance(SCREEN_WIDTH,SCREEN_WIDTH)
+            if not bullet.is_alive: self.bullets.remove(bullet)
+
+        self.ship.advance(SCREEN_WIDTH,SCREEN_WIDTH)
 
         # TODO: Check for collisions
 
@@ -77,16 +89,16 @@ class Game(arcade.Window):
         You will need to put your own method calls in here.
         """
         if arcade.key.LEFT in self.held_keys:
-            pass
+            self.ship.left
 
         if arcade.key.RIGHT in self.held_keys:
-            pass
+            self.ship.right
 
         if arcade.key.UP in self.held_keys:
-            pass
+            self.ship.thrust(True)
 
         if arcade.key.DOWN in self.held_keys:
-            pass
+            self.ship.thrust(False)
 
         # Machine gun mode...
         #if arcade.key.SPACE in self.held_keys:
@@ -103,7 +115,9 @@ class Game(arcade.Window):
 
             if key == arcade.key.SPACE:
                 # TODO: Fire the bullet here!
-                pass
+                bullet = Bullet(self.ship.angle, self.ship.center)
+                self.bullets.append(bullet)
+                bullet.fire()
 
     def on_key_release(self, key: int, modifiers: int):
         """
