@@ -1,0 +1,27 @@
+Your Name: Doug Irwin
+
+1. What is one advantage of MergeSort compared to QuickSort, and one advantage of QuickSort?
+MergeSort has a higher performance output since it is able to divide larger tasks into smaller ones through recursion. QuickSort allows for smaller memory utilization by correctly sorting via aa pivot value.
+
+2. What sorting algorithm is the default, built-in algorithm used by Python? (Use the Internet to track this down.) Briefly describe how it works.
+Python utilizes TimSort, which is a combination of Binary Insertion Sort (where data is inserted in an array) and MergeSort (where data is split up and sorted)
+
+3. What is the most interesting thing you learned as a part of your work for this class this week?
+I learned that "copying" a class does not mean I copied the values of that class.
+
+4. Describe one specific way that you helped someone else this week, or reached out for help.
+I assisted one of my teammates in Slack with their code.
+
+5. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
+
+
+6. How much time did you spend this week on each of the following:
+
+Reading - 
+Checkpoint A - 15 minutes
+Checkpoint B - 20 minutes
+Team Activity - 1 hour
+Data Structures Homework - 1 1/2 hours
+Prove Assignment - 9 hours
+
+If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
