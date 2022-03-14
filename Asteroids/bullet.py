@@ -11,18 +11,23 @@ BULLET_LIFE = 60
 BULLET_IMAGE = "images/laserBlue01.png"
 
 class Bullet(FlyingObject):
-    def __init__(self, angle, ship_position) -> None:
+    def __init__(self, angle, ship_position, ship_speed) -> None:
         # Initialize object defaults
         super().__init__(BULLET_IMAGE, BULLET_RADIUS, BULLET_SPEED)
         self.center.x = ship_position.x
         self.center.y = ship_position.y
+        self.velocity.dx += ship_speed.dx
+        self.velocity.dy += ship_speed.dy
         self.angle = angle+90
         self.life = BULLET_LIFE
 
-
+    @property
     def fire(self) -> None:
-        self.velocity.dx = math.cos(math.radians(self.angle)) * BULLET_SPEED
-        self.velocity.dy = math.sin(math.radians(self.angle)) * BULLET_SPEED
+        """
+         Creates a bullet object
+        """
+        self.velocity.dx -= math.sin(math.radians(self.angle-90)) * self.speed
+        self.velocity.dy += math.cos(math.radians(self.angle-90)) * self.speed
 
     def advance(self, screen_width, screen_height) -> None:
         super().advance(screen_width, screen_height)

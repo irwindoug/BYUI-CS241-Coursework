@@ -1,5 +1,5 @@
 # Define class for velocity measurement
 class Velocity:
-    def __init__(self, x=1, y=1):
+    def __init__(self, x=0, y=0):
         self.dx = x
         self.dy = y

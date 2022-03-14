@@ -12,22 +12,22 @@ from flying_object import FlyingObject
 
 class Ship(FlyingObject):
     def __init__(self, screen_width, screen_height) -> None:
-        super().__init__(SHIP_IMAGE, SHIP_RADIUS)
+        super().__init__(SHIP_IMAGE, SHIP_RADIUS, SHIP_THRUST_AMOUNT, SHIP_TURN_AMOUNT)
         self.center.x = screen_width/2
         self.center.y = screen_height/2
 
     @property
     def left(self) -> None:
-        self.angle += SHIP_TURN_AMOUNT
+        self.angle += self.turn
 
     @property
     def right(self) -> None:
-        self.angle -= SHIP_TURN_AMOUNT
+        self.angle -= self.turn
 
     def thrust(self, isUp) -> None:
         if (not isUp):
-            self.velocity.dx += math.sin(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
-            self.velocity.dy -= math.cos(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
+            self.velocity.dx += math.sin(math.radians(self.angle)) * self.speed
+            self.velocity.dy -= math.cos(math.radians(self.angle)) * self.speed
         else:
-            self.velocity.dx -= math.sin(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
-            self.velocity.dy += math.cos(math.radians(self.angle)) * SHIP_THRUST_AMOUNT
+            self.velocity.dx -= math.sin(math.radians(self.angle)) * self.speed
+            self.velocity.dy += math.cos(math.radians(self.angle)) * self.speed

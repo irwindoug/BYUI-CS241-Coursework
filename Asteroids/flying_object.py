@@ -7,15 +7,19 @@ from velocity import Velocity
 from point import Point
 
 class FlyingObject(ABC):
+    """
+    Baseclass
+
+    """
     def __init__(self, img:str, radius:float, speed:float=0, angle:float=0) -> None:
-        self.center:Point = Point() # Default center point is (0,0)
-        self.velocity:Velocity = Velocity(speed, speed) # Speed is optional param, otherwise defaults as 1
-        self.texture = arcade.load_texture(img) # Required param
-        self.direction:float = 1
-        self.speed:float = speed
+        self.center:Point = Point()
+        self.velocity:Velocity = Velocity()
+        self.texture = arcade.load_texture(img)
+        self.alive:bool = True
         self.radius:float = radius # Required param
-        self.angle:float = angle
-        self.alive:bool = True # Set to alive when created
+        self.turn = angle
+        self.angle:float = 0
+        self.speed:float = speed
 
     def draw(self) -> None:
         arcade.draw_texture_rectangle(self.center.x, self.center.y, self.texture.width, self.texture.height, self.texture, self.angle)
@@ -28,6 +32,9 @@ class FlyingObject(ABC):
 
     @property
     def is_alive(self) -> bool:
+        """
+        Returns if the object is alive or not
+        """
         return self.alive
 
     def wrap(self, screen_width, screen_height):

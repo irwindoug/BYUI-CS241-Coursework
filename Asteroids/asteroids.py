@@ -10,13 +10,14 @@ from bullet import Bullet
 
 # Local Imports
 from ship import Ship
-from rock import LargeRock, MediumRock, SmallRock
+from rock import LargeRock
 
 # These are Global constants to use throughout the game
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 INITIAL_ROCK_COUNT = 5
+
 
 class Game(arcade.Window):
     """
@@ -37,7 +38,7 @@ class Game(arcade.Window):
 
         self.held_keys = set()
 
-        # TODO: declare anything here you need the game class to track
+        # declare anything here you need the game class to track
         self.ship = Ship(SCREEN_WIDTH, SCREEN_HEIGHT)
 
         self.asteroids = []
@@ -45,6 +46,7 @@ class Game(arcade.Window):
 
         for i in range(INITIAL_ROCK_COUNT):
             self.asteroids.append(LargeRock())
+
 
     def on_draw(self):
         """
@@ -55,7 +57,7 @@ class Game(arcade.Window):
         # clear the screen to begin drawing
         arcade.start_render()
 
-        # TODO: draw each object
+        # draw each object
         for bullet in self.bullets:
             bullet.draw()
 
@@ -71,17 +73,58 @@ class Game(arcade.Window):
         """
         self.check_keys()
 
-        # TODO: Tell everything to advance or move forward one step in time
+        # Tell everything to advance or move forward one step in time
         for asteroid in self.asteroids:
-            asteroid.advance(SCREEN_WIDTH,SCREEN_WIDTH)
+            asteroid.advance(SCREEN_WIDTH, SCREEN_WIDTH)
 
         for bullet in self.bullets:
-            bullet.advance(SCREEN_WIDTH,SCREEN_WIDTH)
-            if not bullet.is_alive: self.bullets.remove(bullet)
+            bullet.advance(SCREEN_WIDTH, SCREEN_WIDTH)
 
-        self.ship.advance(SCREEN_WIDTH,SCREEN_WIDTH)
+        self.ship.advance(SCREEN_WIDTH, SCREEN_WIDTH)
 
-        # TODO: Check for collisions
+        # Check for collisions
+        self.check_collisions()
+
+    def check_collisions(self):
+
+        def collided(object1: object, object2: object) -> bool:
+            """ This function checks to see if both object radius's are overlapping, and returns a True or False value.\n
+                Arguments:
+                    object1 {object} - First object to compare\n
+                    object2 {object} - Second object to compare
+
+                Logic: Check if the distance between both x and y coordinates are less than both objects' radius
+            """
+            return (object1.is_alive and object2.is_alive) and ((abs(object1.center.x - object2.center.x) < (object1.radius + object2.radius)) and (abs(object1.center.y - object2.center.y) < (object1.radius + object2.radius)))
+
+        for bullet in self.bullets:
+            for asteroid in self.asteroids:
+                if collided(bullet, asteroid):
+                    bullet.alive = False
+                    self.asteroids.extend(asteroid.hit)
+
+        for asteroid in self.asteroids:
+            if collided(asteroid, self.ship):
+                self.ship.alive = False
+                self.ship.velocity.dx = 0
+                self.ship.velocity.dy = 0
+                self.asteroids.extend(asteroid.hit)
+
+        
+
+        self.remove_dead()
+
+    def remove_dead(self) -> None:
+        """
+        Removes any object that isn't alive
+        """
+        for bullet in self.bullets:
+            if not bullet.is_alive:
+                self.bullets.remove(bullet)
+
+        for asteroid in self.asteroids:
+            if not asteroid.is_alive:
+                self.asteroids.remove(asteroid)
 
     def check_keys(self):
         """
@@ -101,23 +144,24 @@ class Game(arcade.Window):
             self.ship.thrust(False)
 
         # Machine gun mode...
-        #if arcade.key.SPACE in self.held_keys:
-        #    pass
-
+        # if arcade.key.SPACE in self.held_keys:
+        #    bullet = Bullet(self.ship.angle, self.ship.center)
+        #    self.bullets.append(bullet)
+        #    bullet.fire
 
     def on_key_press(self, key: int, modifiers: int):
         """
         Puts the current key in the set of keys that are being held.
         You will need to add things here to handle firing the bullet.
         """
-        if self.ship.alive:
+        if self.ship.is_alive:
             self.held_keys.add(key)
 
             if key == arcade.key.SPACE:
-                # TODO: Fire the bullet here!
-                bullet = Bullet(self.ship.angle, self.ship.center)
+                # Fire the bullet here!
+                bullet = Bullet(self.ship.angle, self.ship.center, self.ship.velocity)
                 self.bullets.append(bullet)
-                bullet.fire()
+                bullet.fire
 
     def on_key_release(self, key: int, modifiers: int):
         """
