@@ -1,5 +1,7 @@
-
 import math
+from explosion import Particle
+
+PARTICLE_COUNT = 20
 
 # Global Variables
 SHIP_TURN_AMOUNT = 3
@@ -31,3 +33,16 @@ class Ship(FlyingObject):
         else:
             self.velocity.dx -= math.sin(math.radians(self.angle)) * self.speed
             self.velocity.dy += math.cos(math.radians(self.angle)) * self.speed
+
+
+    def hit(self, explosion_list) -> None:
+        self.alive = False 
+        self.alpha = 0
+        self.velocity.dx = 0
+        self.velocity.dy = 0
+        for i in range(PARTICLE_COUNT):
+            particle = Particle(explosion_list)
+            particle.center_x = self.center.x
+            particle.center_y = self.center.y
+            explosion_list.append(particle)
+        return explosion_list

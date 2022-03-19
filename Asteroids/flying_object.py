@@ -11,7 +11,7 @@ class FlyingObject(ABC):
     Baseclass
 
     """
-    def __init__(self, img:str, radius:float, speed:float=0, angle:float=0) -> None:
+    def __init__(self, img:str, radius:float, speed:float=0, angle:float=0, alpha:float=255) -> None:
         self.center:Point = Point()
         self.velocity:Velocity = Velocity()
         self.texture = arcade.load_texture(img)
@@ -20,9 +20,10 @@ class FlyingObject(ABC):
         self.turn = angle
         self.angle:float = 0
         self.speed:float = speed
+        self.alpha = alpha
 
     def draw(self) -> None:
-        arcade.draw_texture_rectangle(self.center.x, self.center.y, self.texture.width, self.texture.height, self.texture, self.angle)
+        arcade.draw_texture_rectangle(self.center.x, self.center.y, self.texture.width, self.texture.height, self.texture, self.angle, self.alpha)
 
     # Default advance function moves based off of defined velocity
     def advance(self, screen_width, screen_height) -> None:

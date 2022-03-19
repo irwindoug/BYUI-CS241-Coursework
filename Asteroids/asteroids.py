@@ -40,9 +40,10 @@ class Game(arcade.Window):
 
         # declare anything here you need the game class to track
         self.ship = Ship(SCREEN_WIDTH, SCREEN_HEIGHT)
-
         self.asteroids = []
         self.bullets = []
+        self.explosions = []
+        self.score = 0
 
         for i in range(INITIAL_ROCK_COUNT):
             self.asteroids.append(LargeRock())
@@ -64,7 +65,12 @@ class Game(arcade.Window):
         for asteroid in self.asteroids:
             asteroid.draw()
 
+        for particle in self.explosions:
+            particle.draw()
+
         self.ship.draw()
+
+        arcade.draw_text(("Score: %i") % self.score, 10, 20, arcade.color.WHITE, 14)
 
     def update(self, delta_time):
         """
@@ -79,6 +85,9 @@ class Game(arcade.Window):
 
         for bullet in self.bullets:
             bullet.advance(SCREEN_WIDTH, SCREEN_WIDTH)
+
+        for particle in self.explosions:
+            particle.update()
 
         self.ship.advance(SCREEN_WIDTH, SCREEN_WIDTH)
 
@@ -102,15 +111,12 @@ class Game(arcade.Window):
                 if collided(bullet, asteroid):
                     bullet.alive = False
                     self.asteroids.extend(asteroid.hit)
+                    self.score += 1
 
         for asteroid in self.asteroids:
             if collided(asteroid, self.ship):
-                self.ship.alive = False
-                self.ship.velocity.dx = 0
-                self.ship.velocity.dy = 0
-                self.asteroids.extend(asteroid.hit)
-
-        
+                self.ship.hit(self.explosions)
+                self.asteroids.extend(asteroid.hit)        
 
         self.remove_dead()
 
@@ -125,6 +131,10 @@ class Game(arcade.Window):
         for asteroid in self.asteroids:
             if not asteroid.is_alive:
                 self.asteroids.remove(asteroid)
+
+        for particle in self.explosions:
+            if not particle.is_alive:
+                self.explosions.remove(particle)
 
     def check_keys(self):
         """
