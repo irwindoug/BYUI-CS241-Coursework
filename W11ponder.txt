@@ -1,0 +1,27 @@
+Your Name: Doug Irwin
+
+1. In your own words describe polymorphism.
+It basically is taking something that has a base level and being able to shape it into multiple different functionalities. 
+
+2. Briefly describe how polymorphism is used in your project.
+Everything from my basic code that appeared on screen inherited from a single class called FlyingObject, even though a lot of the functionality changed between a bullet, a ship, or an asteroid. Then, each asteroid also changed functionality based on whether it was a small, medium, or large asteroid. I was able to change each characteristic, even though all of the objects shared similar basic variables and functionalities.
+
+3. What is the most interesting thing you learned as a part of your work for this class this week?
+I learned that there was a way (though I did not implement it) to remove an object within an array based from within the class through inherited functionality from the arcade library.
+
+4. Describe one specific way that you helped someone else this week, or reached out for help.
+I reached out to Brother Mellor to ask about why my asteroid objects were not breaking apart correctly, only to learn that I was copying a class instead of the class variables, which cased the broken functionality.
+
+5. Are there any topics from this week that you still feel uneasy about, or would like to learn more about?
+
+
+6. How much time did you spend this week on each of the following:
+
+Reading - 1 hour
+Checkpoint A - N/A
+Checkpoint B - N/A 
+Team Activity - 45 Minutes
+Data Structures Homework - 55 minutes
+Prove Assignment - 3 hours
+
+If you have other questions or comments for the instructor, please post them to Slack, either in the general channel if others can benefit, or as a direct message if the matter is more personal.
