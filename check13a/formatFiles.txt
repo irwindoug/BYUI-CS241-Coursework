@@ -1,0 +1,5 @@
+/home/irw20001/cs241/assign04/main.py:    print("Quantity: {}".format(p2.quantity))
+/home/irw20001/cs241/assign05/pong.py:        score_text = "Score: {}".format(self.score)
+/home/irw20001/cs241/assign06/skeet.py:        score_text = "Score: {}".format(self.score)
+/home/irw20001/cs241/check04b/address.py:        print("{}, {} {}".format(self.city, self.state, self.zip))
+/home/irw20001/cs241/Skeet/skeet.py:        score_text = "Score: {}".format(self.score)
